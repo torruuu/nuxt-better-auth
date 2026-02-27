@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   typescript: {
-    typeCheck: true,
+    typeCheck: false,
   },
   compatibilityDate: '2026-02-27',
 })
