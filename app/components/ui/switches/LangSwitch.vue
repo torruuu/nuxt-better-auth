@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { Button } from '@/components/ui/shadcn/button'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/shadcn/dropdown-menu'
+} from '@/components/ui/dropdown-menu'
+import { Languages } from 'lucide-vue-next'
 
 const { locales, setLocale, locale } = useI18n()
 </script>
@@ -14,7 +15,7 @@ const { locales, setLocale, locale } = useI18n()
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
       <Button variant="outline">
-        <Icon class="h-[1.2rem] w-[1.2rem] transition-all" name="lucide:languages" />
+        <Languages class="h-[1.2rem] w-[1.2rem] transition-all" />
         <span class="sr-only">Toggle language</span>
       </Button>
     </DropdownMenuTrigger>

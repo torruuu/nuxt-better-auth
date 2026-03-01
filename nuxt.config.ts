@@ -1,13 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/eslint',
-    'shadcn-nuxt',
-    '@nuxtjs/color-mode',
-    '@nuxt/icon',
-    '@nuxtjs/i18n',
-  ],
+  modules: ['@nuxt/eslint', 'shadcn-nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n'],
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   vite: {
@@ -18,7 +12,7 @@ export default defineNuxtConfig({
     typeCheck: false,
   },
   shadcn: {
-    componentDir: './app/components/ui/shadcn',
+    componentDir: './app/components/ui',
   },
   i18n: {
     strategy: 'no_prefix',

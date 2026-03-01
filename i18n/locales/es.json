@@ -2,5 +2,26 @@
   "title": {
     "sign_in": "Iniciar sesión",
     "sign_up": "Registrarse"
+  },
+  "form": {
+    "description": {
+      "sign_up": "Introduce tus datos para crear una cuenta"
+    },
+    "label": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "password": "Contraseña"
+    },
+    "error": {
+      "required": "Este campo es obligatorio",
+      "max_char": "Máximo {max} caracteres",
+      "min_char": "Mínimo {min} caracteres",
+      "max_number": "El valor máximo es {max}",
+      "min_number": "El valor mínimo es {min}",
+      "invalid_email": "Correo electrónico inválido"
+    }
+  },
+  "action": {
+    "submit": "Enviar"
   }
 }

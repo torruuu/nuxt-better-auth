@@ -2,5 +2,26 @@
   "title": {
     "sign_in": "Sign in",
     "sign_up": "Sign up"
+  },
+  "form": {
+    "description": {
+      "sign_up": "Enter your data to create an account"
+    },
+    "label": {
+      "name": "Name",
+      "email": "Email",
+      "password": "Password"
+    },
+    "error": {
+      "required": "This field is required",
+      "max_char": "Maximum {max} characters",
+      "min_char": "Minimum {min} characters",
+      "max_number": "Maximum value is {max}",
+      "min_number": "Minimum value is {min}",
+      "invalid_email": "Invalid email address"
+    }
+  },
+  "action": {
+    "submit": "Submit"
   }
 }

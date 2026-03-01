@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/shadcn/card'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/shadcn/tabs'
+import SignUp from '@/components/forms/SignUp.vue'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 </script>
 
 <template>
@@ -9,23 +16,29 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/shadcn
       <TabsTrigger value="signin">{{ $t('title.sign_in') }}</TabsTrigger>
       <TabsTrigger value="signup">{{ $t('title.sign_up') }}</TabsTrigger>
     </TabsList>
-    <Card>
-      <TabsContent value="signin">
+    <TabsContent value="signin">
+      <Card>
         <CardHeader>
           <CardTitle>{{ $t('title.sign_in') }}</CardTitle>
         </CardHeader>
         <CardContent>
           <p>Sign in form</p>
         </CardContent>
-      </TabsContent>
-      <TabsContent value="signup">
+      </Card>
+    </TabsContent>
+
+    <TabsContent value="signup">
+      <Card>
         <CardHeader>
           <CardTitle>{{ $t('title.sign_up') }}</CardTitle>
+          <CardDescription>
+            {{ $t('form.description.sign_up') }}
+          </CardDescription>
         </CardHeader>
         <CardContent>
-          <p>Sign up form</p>
+          <SignUp />
         </CardContent>
-      </TabsContent>
-    </Card>
+      </Card>
+    </TabsContent>
   </Tabs>
 </template>

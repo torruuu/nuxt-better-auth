@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import LangSwitch from '@/components/ui/switches/LangSwitch.vue'
-import ThemeSwitch from '@/components/ui/switches/ThemeSwitch.vue'
+import { LangSwitch, ThemeSwitch } from '@/components/ui/switches'
 </script>
 
 <template>
