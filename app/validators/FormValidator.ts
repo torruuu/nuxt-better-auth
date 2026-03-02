@@ -9,7 +9,7 @@ type RuleMessageResolvers<TSchema extends z.ZodType> = Partial<
   Record<Extract<keyof TSchema, string>, RuleMessageResolver>
 >
 
-function preprocessIfRequired(schema: z.ZodSchema) {
+function preprocessIfRequired<T extends z.ZodSchema>(schema: T) {
   return z.preprocess((v) => (v === null || v === '' ? undefined : v), schema)
 }
 

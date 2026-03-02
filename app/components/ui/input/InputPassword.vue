@@ -6,6 +6,8 @@ import { cn } from '@/lib/shadcn/utils'
 import { EyeIcon, EyeOffIcon } from 'lucide-vue-next'
 import { ref } from 'vue'
 
+defineOptions({ inheritAttrs: false })
+
 const props = defineProps<InputProps>()
 
 const emits = defineEmits<{
@@ -18,7 +20,7 @@ const showPassword = ref(false)
 <template>
   <div class="relative">
     <Input
-      v-bind="props"
+      v-bind="{ ...$attrs, ...props }"
       :class="cn('pr-9', props.class)"
       :type="showPassword ? 'text' : 'password'"
       @update:model-value="emits('update:modelValue', $event)"

@@ -26,5 +26,15 @@ export default defineNuxtConfig({
       fallbackLocale: 'en',
     },
   },
+  routeRules: {
+    '/api/**': {
+      proxy: `${process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:4000'}/**`,
+    },
+  },
+  runtimeConfig: {
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
+    },
+  },
   compatibilityDate: '2026-02-27',
 })

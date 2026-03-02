@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/field'
 import { Input, InputPassword } from '@/components/ui/input'
 import { Spinner } from '@/components/ui/spinner'
+import { authClient } from '@/lib/auth/auth-client'
 import { FormValidator } from '@/validators/FormValidator'
 import { useForm, Field as VeeField } from 'vee-validate'
 import { z } from 'zod'
@@ -28,11 +29,16 @@ const { handleSubmit, isSubmitting } = useForm({
 })
 
 const onSubmit = handleSubmit(async (values) => {
-  await new Promise((resolve) =>
-    setTimeout(() => {
-      console.log(values)
-      resolve(true)
-    }, 1000),
+  await authClient.signUp.email(
+    { ...values },
+    {
+      onSuccess: (data) => {
+        console.log(data.data)
+      },
+      onError: (error) => {
+        console.log(error.error.name)
+      },
+    },
   )
 })
 </script>

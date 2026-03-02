@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { authClient } from '@/lib/auth/auth-client'
+
+const { data: session } = await authClient.useSession(useFetch)
+</script>
+
 <template>
-  <h1>Home Page</h1>
+  <p>
+    {{ session }}
+  </p>
 </template>

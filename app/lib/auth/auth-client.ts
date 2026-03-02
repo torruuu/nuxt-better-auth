@@ -1,4 +1,7 @@
 import { createAuthClient } from 'better-auth/vue'
+
 export const authClient = createAuthClient({
-  baseURL: 'http://localhost:4000/auth',
+  fetchOptions: {
+    credentials: 'include',
+  },
 })
