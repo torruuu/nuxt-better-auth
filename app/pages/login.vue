@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import SignIn from '@/components/forms/SignIn.vue'
 import SignUp from '@/components/forms/SignUp.vue'
 import {
   Card,
@@ -20,9 +21,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
       <Card>
         <CardHeader>
           <CardTitle>{{ $t('title.sign_in') }}</CardTitle>
+          <CardDescription>
+            {{ $t('form.description.sign_in') }}
+          </CardDescription>
         </CardHeader>
         <CardContent>
-          <p>Sign in form</p>
+          <SignIn />
         </CardContent>
       </Card>
     </TabsContent>

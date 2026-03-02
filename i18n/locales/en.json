@@ -5,7 +5,8 @@
   },
   "form": {
     "description": {
-      "sign_up": "Enter your data to create an account"
+      "sign_up": "Enter your data to create an account",
+      "sign_in": "Enter your data to sign in"
     },
     "label": {
       "name": "Name",
