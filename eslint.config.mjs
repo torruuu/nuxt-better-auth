@@ -73,6 +73,14 @@ export default withNuxt(
     },
   },
   {
-    ignores: ['dist', 'node_modules', '.env', '.nuxt', '.output', 'components.d.ts'],
+    ignores: [
+      'dist',
+      'node_modules',
+      '.env',
+      '.nuxt',
+      '.output',
+      'components.d.ts',
+      'app/client',
+    ],
   },
 )

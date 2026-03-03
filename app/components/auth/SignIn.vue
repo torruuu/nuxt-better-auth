@@ -35,7 +35,7 @@ const onSubmit = handleSubmit(async (values) => {
         console.log(data.data)
       },
       onError: (error) => {
-        console.log(error.error.name)
+        console.log(error.error)
       },
     },
   )

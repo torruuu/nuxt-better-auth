@@ -34,12 +34,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/api/**': {
-      proxy: `${process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:4000'}/**`,
-    },
-  },
-  runtimeConfig: {
-    public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
+      proxy: `${process.env.NUXT_API_BASE}/**`,
     },
   },
   compatibilityDate: '2026-02-27',

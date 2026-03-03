@@ -11,6 +11,7 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "typecheck": "vue-tsc --noEmit",
+    "openapi-ts": "openapi-ts",
     "prepare": "husky || true"
   },
   "dependencies": {
@@ -40,6 +41,7 @@
     "@commitlint/cli": "^20.4.2",
     "@commitlint/config-conventional": "^20.4.2",
     "@eslint/js": "^9.39.3",
+    "@hey-api/openapi-ts": "^0.93.1",
     "@nuxt/eslint": "^1.15.2",
     "eslint": "^9.39.3",
     "eslint-config-prettier": "^10.1.8",

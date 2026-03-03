@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import SignIn from '@/components/forms/SignIn.vue'
-import SignUp from '@/components/forms/SignUp.vue'
+import SignIn from '@/components/auth/SignIn.vue'
+import SignUp from '@/components/auth/SignUp.vue'
 import {
   Card,
   CardContent,
