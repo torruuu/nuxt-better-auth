@@ -11,7 +11,11 @@
     "label": {
       "name": "Name",
       "email": "Email",
-      "password": "Password"
+      "password": "Password",
+      "description": "Description",
+      "price": "Price",
+      "stock": "Stock",
+      "category": "Category"
     },
     "error": {
       "required": "This field is required",
