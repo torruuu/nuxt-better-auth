@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import SignIn from '@/components/auth/SignIn.vue'
-import SignUp from '@/components/auth/SignUp.vue'
+import { SignIn, SignUp } from '@/components/auth'
 import {
   Card,
   CardContent,
@@ -12,17 +11,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 </script>
 
 <template>
-  <Tabs class="max-auto my-6 w-full px-4" default-value="signin">
+  <Tabs class="max-auto my-6 w-full items-center px-4" default-value="signin">
     <TabsList>
-      <TabsTrigger value="signin">{{ $t('title.sign_in') }}</TabsTrigger>
-      <TabsTrigger value="signup">{{ $t('title.sign_up') }}</TabsTrigger>
+      <TabsTrigger value="signin">{{ $t('auth.sign_in.title') }}</TabsTrigger>
+      <TabsTrigger value="signup">{{ $t('auth.sign_up.title') }}</TabsTrigger>
     </TabsList>
-    <TabsContent value="signin">
+    <TabsContent class="w-full max-w-md" value="signin">
       <Card>
         <CardHeader>
-          <CardTitle>{{ $t('title.sign_in') }}</CardTitle>
+          <CardTitle>{{ $t('auth.sign_in.title') }}</CardTitle>
           <CardDescription>
-            {{ $t('form.description.sign_in') }}
+            {{ $t('auth.sign_in.description') }}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -31,12 +30,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
       </Card>
     </TabsContent>
 
-    <TabsContent value="signup">
+    <TabsContent class="w-full max-w-md" value="signup">
       <Card>
         <CardHeader>
-          <CardTitle>{{ $t('title.sign_up') }}</CardTitle>
+          <CardTitle>{{ $t('auth.sign_up.title') }}</CardTitle>
           <CardDescription>
-            {{ $t('form.description.sign_up') }}
+            {{ $t('auth.sign_up.description') }}
           </CardDescription>
         </CardHeader>
         <CardContent>

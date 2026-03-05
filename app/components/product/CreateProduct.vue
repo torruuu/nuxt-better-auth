@@ -33,6 +33,7 @@ import {
 import { Spinner } from '@/components/ui/spinner'
 import { FormValidator } from '@/validators/FormValidator'
 import { useMutation } from '@tanstack/vue-query'
+import { PlusIcon } from 'lucide-vue-next'
 import { useForm, Field as VeeField } from 'vee-validate'
 import { toast } from 'vue-sonner'
 import { z } from 'zod'
@@ -58,7 +59,12 @@ const { handleSubmit, isSubmitting, setFieldValue } = useForm({
 const createProduct = useMutation({
   ...createProductMutation(),
   onSuccess: (data) => {
-    console.log(data)
+    toast.success(t('api.success.product_created'), {
+      description: t('api.success.product_created_description', {
+        name: data.name,
+        id: data.id,
+      }),
+    })
     isOpen.value = false
   },
   onError: (error) => {
@@ -74,7 +80,10 @@ const onSubmit = handleSubmit((values) => {
 <template>
   <Dialog v-model:open="isOpen">
     <DialogTrigger as-child>
-      <Button>Create Product</Button>
+      <Button>
+        <PlusIcon />
+        {{ $t('product.create.title') }}
+      </Button>
     </DialogTrigger>
     <DialogContent
       @interact-outside="
@@ -85,9 +94,9 @@ const onSubmit = handleSubmit((values) => {
       "
     >
       <DialogHeader>
-        <DialogTitle>Create Product</DialogTitle>
+        <DialogTitle>{{ $t('product.create.title') }}</DialogTitle>
         <DialogDescription>
-          Create a new product with the following details.
+          {{ $t('product.create.description') }}
         </DialogDescription>
       </DialogHeader>
       <form @submit="onSubmit">

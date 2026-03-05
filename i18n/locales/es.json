@@ -1,13 +1,26 @@
 {
-  "title": {
-    "sign_in": "Iniciar sesión",
-    "sign_up": "Registrarse"
+  "auth": {
+    "sign_in": {
+      "title": "Iniciar sesión",
+      "description": "Introduce tus datos para iniciar sesión"
+    },
+    "sign_up": {
+      "title": "Registrarse",
+      "description": "Introduce tus datos para crear una cuenta"
+    }
+  },
+  "product": {
+    "create": {
+      "title": "Crear producto",
+      "description": "Introduce los datos del producto para crearlo"
+    }
+  },
+  "pages": {
+    "home": {
+      "welcome": "Bienvenido {name}!"
+    }
   },
   "form": {
-    "description": {
-      "sign_up": "Introduce tus datos para crear una cuenta",
-      "sign_in": "Introduce tus datos para iniciar sesión"
-    },
     "label": {
       "name": "Nombre",
       "email": "Correo electrónico",
@@ -27,7 +40,8 @@
     }
   },
   "action": {
-    "submit": "Enviar"
+    "submit": "Enviar",
+    "sign_out": "Cerrar sesión"
   },
   "api": {
     "error": {
@@ -77,6 +91,10 @@
 
       "internal_server_error": "Error interno del servidor",
       "not_found": "No encontrado"
+    },
+    "success": {
+      "product_created": "Producto creado correctamente",
+      "product_created_description": "El producto con nombre {name} ha sido creado correctamente con id {id}"
     }
   }
 }

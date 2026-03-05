@@ -1,13 +1,26 @@
 {
-  "title": {
-    "sign_in": "Sign in",
-    "sign_up": "Sign up"
+  "auth": {
+    "sign_in": {
+      "title": "Sign in",
+      "description": "Enter your data to sign in"
+    },
+    "sign_up": {
+      "title": "Sign up",
+      "description": "Enter your data to create an account"
+    }
+  },
+  "product": {
+    "create": {
+      "title": "Create product",
+      "description": "Enter the data of the product to create it"
+    }
+  },
+  "pages": {
+    "home": {
+      "welcome": "Welcome {name}!"
+    }
   },
   "form": {
-    "description": {
-      "sign_up": "Enter your data to create an account",
-      "sign_in": "Enter your data to sign in"
-    },
     "label": {
       "name": "Name",
       "email": "Email",
@@ -27,7 +40,8 @@
     }
   },
   "action": {
-    "submit": "Submit"
+    "submit": "Submit",
+    "sign_out": "Sign out"
   },
   "api": {
     "error": {
@@ -77,6 +91,10 @@
       
       "internal_server_error": "Internal server error",
       "not_found": "Not found"
+    },
+    "success": {
+      "product_created": "Product created successfully",
+      "product_created_description": "Product with name {name} has been created successfully with id {id}"
     }
   }
 }
