@@ -34,6 +34,7 @@ import { Spinner } from '@/components/ui/spinner'
 import { FormValidator } from '@/validators/FormValidator'
 import { useMutation } from '@tanstack/vue-query'
 import { useForm, Field as VeeField } from 'vee-validate'
+import { toast } from 'vue-sonner'
 import { z } from 'zod'
 
 const { t } = useI18n()
@@ -61,7 +62,7 @@ const createProduct = useMutation({
     isOpen.value = false
   },
   onError: (error) => {
-    console.log(error)
+    return toast.error(useApiErrorMessage(error.code))
   },
 })
 
@@ -75,7 +76,14 @@ const onSubmit = handleSubmit((values) => {
     <DialogTrigger as-child>
       <Button>Create Product</Button>
     </DialogTrigger>
-    <DialogContent>
+    <DialogContent
+      @interact-outside="
+        (event) => {
+          const target = event.target as HTMLElement
+          if (target?.closest('[data-sonner-toaster]')) return event.preventDefault()
+        }
+      "
+    >
       <DialogHeader>
         <DialogTitle>Create Product</DialogTitle>
         <DialogDescription>

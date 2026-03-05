@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
     '@pinia/nuxt',
+    'vue-sonner/nuxt',
   ],
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
@@ -19,6 +20,9 @@ export default defineNuxtConfig({
   },
   shadcn: {
     componentDir: './app/components/ui',
+  },
+  vueSonner: {
+    css: false,
   },
   i18n: {
     strategy: 'no_prefix',

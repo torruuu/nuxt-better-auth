@@ -12,6 +12,7 @@ import { Spinner } from '@/components/ui/spinner'
 import { authClient } from '@/lib/auth/auth-client'
 import { FormValidator } from '@/validators/FormValidator'
 import { useForm, Field as VeeField } from 'vee-validate'
+import { toast } from 'vue-sonner'
 import { z } from 'zod'
 
 const { t } = useI18n()
@@ -29,17 +30,11 @@ const { handleSubmit, isSubmitting } = useForm({
 })
 
 const onSubmit = handleSubmit(async (values) => {
-  await authClient.signUp.email(
-    { ...values },
-    {
-      onSuccess: (data) => {
-        console.log(data.data)
-      },
-      onError: (error) => {
-        console.log(error.error.name)
-      },
-    },
-  )
+  const { error } = await authClient.signUp.email({ ...values })
+  if (error) {
+    return toast.error(useApiErrorMessage(error.code))
+  }
+  reloadNuxtApp()
 })
 </script>
 

@@ -4,10 +4,12 @@ import { LangSwitch, ThemeSwitch } from '@/components/ui/switches'
 
 <template>
   <div>
-    <div class="flex items-center justify-end gap-2">
+    <header class="flex items-center justify-end gap-2">
       <ThemeSwitch />
       <LangSwitch />
-    </div>
-    <slot />
+    </header>
+    <main>
+      <slot />
+    </main>
   </div>
 </template>
