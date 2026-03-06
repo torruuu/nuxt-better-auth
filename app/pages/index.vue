@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 import { authClient } from '@/lib/auth/auth-client'
 import { LogOutIcon } from 'lucide-vue-next'
 
-const { session } = useAuthStore()
+const { session } = useSession()
 
 const handleSignOut = async () => {
   await authClient.signOut({
@@ -16,7 +16,7 @@ const handleSignOut = async () => {
 
 <template>
   <div class="flex flex-col items-center justify-center gap-2 p-4">
-    <p>{{ $t('pages.home.welcome', { name: session?.user.name }) }}</p>
+    <p>{{ $t('pages.home.welcome', { name: session?.user?.name }) }}</p>
     <Button @click="handleSignOut">
       <LogOutIcon />
       {{ $t('action.sign_out') }}

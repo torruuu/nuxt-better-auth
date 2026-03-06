@@ -2,7 +2,7 @@
 import { CreateProduct } from '@/components/product'
 import { LangSwitch, ThemeSwitch } from '@/components/ui/switches'
 
-const { session } = useAuthStore()
+const { session } = useSession()
 </script>
 
 <template>
