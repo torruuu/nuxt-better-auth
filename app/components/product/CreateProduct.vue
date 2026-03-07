@@ -39,6 +39,7 @@ import { toast } from 'vue-sonner'
 import { z } from 'zod'
 
 const { t } = useI18n()
+const { getTranslatedError } = useApiMessage()
 
 const isOpen = ref(false)
 
@@ -68,7 +69,7 @@ const createProduct = useMutation({
     isOpen.value = false
   },
   onError: (error) => {
-    return toast.error(useApiErrorMessage(error.code))
+    return toast.error(getTranslatedError(error.code))
   },
 })
 

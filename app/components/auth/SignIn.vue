@@ -16,6 +16,7 @@ import { toast } from 'vue-sonner'
 import { z } from 'zod'
 
 const { t } = useI18n()
+const { getTranslatedError } = useApiMessage()
 
 const schema = computed(() =>
   z.object({
@@ -31,7 +32,7 @@ const { handleSubmit, isSubmitting } = useForm({
 const onSubmit = handleSubmit(async (values) => {
   const { error } = await authClient.signIn.email({ ...values })
   if (error) {
-    return toast.error(useApiErrorMessage(error.code))
+    return toast.error(getTranslatedError(error.code))
   }
   reloadNuxtApp()
 })
