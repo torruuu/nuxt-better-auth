@@ -7,12 +7,10 @@
   "stylelint.enable": true,
   "eslint.enable": true,
   "stylelint.validate": ["css", "vue", "tailwindcss"],
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "vue"
-  ],
+  "eslint.validate": ["javascript", "typescript", "vue"],
+  "prettier.documentSelectors": ["**/*.json"],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
+    "source.fixAll.eslint": "always",
+    "source.fixAll.prettier": "always"
   }
 }
